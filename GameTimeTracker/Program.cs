@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using GameTimeTracker.Setup;
+using GameTimeTracker.TimeTracking;
+using System.Threading.Tasks;
 
 namespace GameTimeTracker
 {
@@ -14,6 +14,10 @@ namespace GameTimeTracker
         [STAThread]
         static void Main()
         {
+            if (!FirstTimeSetup.isSetup()) FirstTimeSetup.execute();
+            var ds = new DataSheet();
+            var tracker = new Tracker(ds);
+            var trackingTask = Task.Run(() => tracker.track()); // Tracking function
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
