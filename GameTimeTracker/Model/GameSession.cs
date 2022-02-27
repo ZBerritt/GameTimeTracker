@@ -11,7 +11,7 @@ namespace GameTimeTracker.Model
         /// <summary>
         /// <see cref="IGameSession.Game"/>
         /// </summary>
-        public Game game { get; }
+        public string game { get; }
 
         /// <summary>
         /// <see cref="IGameSession.StartTime"/>
@@ -25,7 +25,7 @@ namespace GameTimeTracker.Model
 
     
 
-        public GameSession(DateTime startTime, DateTime endTime, Game game)
+        public GameSession(DateTime startTime, DateTime endTime, string game)
         {
             this.StartTime = startTime;
             this.EndTime = endTime;

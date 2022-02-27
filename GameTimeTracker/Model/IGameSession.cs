@@ -11,7 +11,7 @@ namespace GameTimeTracker.Model
         /// <summary>
         /// The game being played during the session
         /// </summary>
-        Game game { get; }
+        string game { get; }
 
         /// <summary>
         /// The start time of the session

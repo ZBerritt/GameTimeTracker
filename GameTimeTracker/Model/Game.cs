@@ -4,10 +4,10 @@ namespace GameTimeTracker.Model
 {
     internal class Game
     {
-        private string name;
-        private string processName;
-        private string windowName;
-        private string executable;
+        public string name { get; }
+        public string processName { get; }
+        public string windowName { get; }
+        public string executable { get; }
 
 
         public Game(string name, string processName, string windowName, string executable)
