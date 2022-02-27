@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 
-namespace GameTimeTracker.TimeTracking
+namespace GameTimeTracker.Model
 {
-    internal class GameTracker
+    internal class Game
     {
         private string name;
         private string processName;
@@ -10,7 +10,7 @@ namespace GameTimeTracker.TimeTracking
         private string executable;
 
 
-        public GameTracker(string name, string processName, string windowName, string executable)
+        public Game(string name, string processName, string windowName, string executable)
         {
             this.processName = processName;
             this.name = name;
@@ -19,7 +19,8 @@ namespace GameTimeTracker.TimeTracking
         }
 
         // Returns true if program is running
-        public bool findProgram() {
+        public bool isRunning()
+        {
             Process[] activeProcesses = Process.GetProcesses();
             foreach (Process prc in activeProcesses)
             {
@@ -29,7 +30,5 @@ namespace GameTimeTracker.TimeTracking
             }
             return false;
         }
-
-
     }
 }
