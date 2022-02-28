@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GameTimeTracker.Model
 {
@@ -12,10 +10,16 @@ namespace GameTimeTracker.Model
         public DateTime Date { get; }
         public Dictionary<string, int> Playtime { get; }
 
-        public string Serialize()
+        public DailyActivity(DateTime date, Dictionary<string, int> playtime)
+        {
+            Date = date;
+            Playtime = playtime;
+        }
+
+        public JObject ToJson()
         {
             JObject json = new JObject();
-            json.Add("date", Date.ToString());
+            json.Add("date", Date.ToString("MM/dd/yyyy"));
             
             JArray gameArray = new JArray();
             foreach (var item in Playtime)
@@ -26,7 +30,8 @@ namespace GameTimeTracker.Model
                 gameArray.Add(gameObject);
             }
 
-            return json.ToString();
+            json.Add("game_playtime", gameArray);
+            return json;
         }
 
         public int TotalPlaytime()

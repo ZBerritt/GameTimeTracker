@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
 
 namespace GameTimeTracker.Model
 {
@@ -29,6 +27,6 @@ namespace GameTimeTracker.Model
         /// <summary>
         /// Serializes the data into JSON format 
         /// </summary>
-        string Serialize();
+        JObject ToJson();
     }
 }
