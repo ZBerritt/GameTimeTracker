@@ -1,5 +1,4 @@
 ﻿using System;
-using GameTimeTracker.TimeTracking;
 using System.IO; 
 
 namespace GameTimeTracker.Setup
@@ -8,7 +7,8 @@ namespace GameTimeTracker.Setup
     {
         public static bool isSetup()
         {
-            return File.Exists(Tracker.settings);
+            // return File.Exists(Tracker.settings);
+            return true;
         }
 
         public static void execute()
