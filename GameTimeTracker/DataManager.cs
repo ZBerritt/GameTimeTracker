@@ -20,7 +20,7 @@ namespace GameTimeTracker
             {
                 json.Add(activityItem.ToJson()); 
             }
-            string jsonData = json.ToString();
+            string jsonData = JsonConvert.SerializeObject(json, Formatting.None);
             if (!File.Exists(playtimeDataLocation)) File.Create(playtimeDataLocation);
             File.WriteAllText(playtimeDataLocation, jsonData);
         }
