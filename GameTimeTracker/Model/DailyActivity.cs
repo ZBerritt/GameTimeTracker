@@ -20,7 +20,7 @@ namespace GameTimeTracker.Model
         {
             JObject json = new JObject();
             json.Add("date", Date.ToString("MM/dd/yyyy"));
-            
+
             JArray gameArray = new JArray();
             foreach (var item in Playtime)
             {
