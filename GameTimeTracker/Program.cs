@@ -16,6 +16,7 @@ namespace GameTimeTracker
                 new DailyActivity(DateTime.Now.AddDays(1), new Dictionary<string, int>() { { "test", 0 }, { "test2", 69 } }) };
             DataManager.SavePlaytimeData(data); */
             // if (!FirstTimeSetup.isSetup()) FirstTimeSetup.execute();
+            var engine = new TrackerEngine();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
